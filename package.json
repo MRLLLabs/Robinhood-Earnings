@@ -5,7 +5,8 @@
   "scripts": {
     "build": "webpack -w -d",
     "start": "nodemon ./server/server.js",
-    "start:debug": "nodemon --inspect ./server/server.js"
+    "start:debug": "nodemon --inspect ./server/server.js",
+    "db:setup": "node ./server/db/seed.js"
   },
   "repository": {
     "type": "git",
