@@ -10,19 +10,22 @@ const createObjects = () => {
 
   // integer that is the current price
   console.log("creating new collections...")
-  Object.entries(companyNames).forEach( (entry, idx) => {
-    let newGraph = {
-      company: entry[0],
-      title: entry[1],
-      scale: "",
-      data: dataCreate(currentStockPrice)
-    }
+  return companyNames.then( (companyNames) => {
+    Object.entries(companyNames).forEach( (entry, idx) => {
+      let newGraph = {
+        company: entry[0],
+        symbol: entry[1],
+        scale: "",
+        data: dataCreate(currentStockPrice)
+      }
 
-    console.log(`Companies: ${idx + 1}/${Object.keys(companyNames).length}`)
-    graphData.push(newGraph)
+      console.log(`Companies: ${idx + 1}/${Object.keys(companyNames).length}`)
+      graphData.push(newGraph)
+    })
+
+    return graphData
   })
 
-  return graphData
 }
 
 const dbSetup = () => {
@@ -33,13 +36,15 @@ const dbSetup = () => {
     }
 
     let newData = createObjects();
-    Graph.create(newData, (err, res) => {
-      if (err) {
-        throw err
-      }
-      db.then((res) => {
-        console.log("created db")
-        res.disconnect()
+    newData.then( (newData) => {
+      Graph.create(newData, (err, res) => {
+        if (err) {
+          throw err
+        }
+        db.then((res) => {
+          console.log("created db")
+          res.disconnect()
+        })
       })
     })
   })
