@@ -4,7 +4,7 @@ mongoose.Promise = global.Promise;
 
 const graphSchema = new mongoose.Schema({
   company: String,
-  title: String,
+  symbol: String,
   data: [
     {
       date: String,
