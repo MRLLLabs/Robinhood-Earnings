@@ -2,13 +2,10 @@ const express = require('express')
 const path = require('path')
 const Graph = require('./db/graph.js')
 const app = express()
-const port = 3000
 
 app.use(express.json());
 app.use(express.urlencoded());
 app.use('/', express.static(path.resolve(__dirname, '../public')))
-
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 
 app.get('/getData', (req, res) => {
@@ -22,6 +19,7 @@ app.get('/getData', (req, res) => {
     } else {
       res.end(JSON.stringify(data))
     }
-
   })
 })
+
+module.exports = app

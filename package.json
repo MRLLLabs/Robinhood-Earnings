@@ -6,7 +6,8 @@
     "build": "webpack -w -d",
     "start": "nodemon ./server/server.js",
     "start:debug": "nodemon --inspect ./server/server.js",
-    "db:setup": "node ./server/db/seed.js"
+    "db:setup": "node -e 'require(\"./server/db/seed.js\")()'",
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -31,8 +32,13 @@
     "@babel/preset-env": "^7.7.4",
     "@babel/preset-react": "^7.7.4",
     "babel-loader": "^8.0.6",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "faker": "^4.1.0",
     "jest": "^24.9.0",
     "nodemon": "^2.0.1",
+    "superagent": "^5.1.2",
+    "supertest": "^4.0.2",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   }
