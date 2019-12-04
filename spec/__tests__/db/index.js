@@ -42,7 +42,6 @@ describe('Graph collection should', () => {
       expect(news.length).toBe(0)
       done()
     })
-
   })
 })
 // this is supposed to test seed function

@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('./../../../server/server.js')
+const app = require('./../../../server/server.js');
 
 describe('testing the test', () => {
   it('should get a response from the get method', (done) => {
@@ -22,4 +22,5 @@ describe('testing the test', () => {
       done();
     })
   })
+
 })
