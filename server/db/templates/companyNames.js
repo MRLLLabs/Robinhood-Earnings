@@ -1,26 +1,25 @@
-// Random names I pulled with the symbol name
-const companyNames = {
-  "Alphabet": "GOOGL",
-  "Twitter": "TWTR",
-  "Activision Blizzard": "ATVI",
-  "Tencent": "TCEHY",
-  "EA": "EA",
-  "Facebook": "FB",
-  "Salesforce": "CRM",
-  "PayPal": "PYPL",
-  "Roku": "ROKU",
-  "Microsoft": "MSFT",
-  "Disney": "DIS",
-  "Ford": "F",
-  "Tesla": "TSLA",
-  "NVIDIA": "NVDA",
-  "Intel": "INTC",
-  "Uber": "UBER",
-  "Netflix": "NFLX",
-  "Walgreens": "WBA",
-  "McDonald's": "MCD",
-  "Chipotle": "CMG",
-  "Nissan": "NSANY"
-}
+const fs = require('fs');
 
-module.exports = companyNames
+let companyNames = {}
+
+const loadCompanies = new Promise ((res, rej) => {
+  fs.readFile(__dirname + '/companies.csv', 'utf8', (err, data) => {
+    if (err) {
+      throw err
+    }
+    let splitted = data.split("\n");
+    for (var i = 1; i < splitted.length - 1; i++){
+      let dataSplit = splitted[i].split(",");
+      companyNames[dataSplit[1]] = dataSplit[0]
+    }
+    res();
+  })
+
+});
+
+const setupCompanies = () => {
+  return loadCompanies.then((res) => {
+    return companyNames
+  })
+}
+module.exports = setupCompanies()
