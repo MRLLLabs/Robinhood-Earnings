@@ -1,33 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import GlobalStyle from './globalStyle.js';
 
+import { Chart } from './components';
 
-class App extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      text: ""
-    }
-  }
-
-  componentDidMount() {
-    fetch('/getData', {
-      type: "GET",
-    }).then((response) => {
-      return response.json()
-    }).then((response) => {
-      console.log(response)
-      this.setState({
-        text: JSON.stringify(response)
-      })
-    })
-  }
-
-  render() {
-    return(
-      <div>{this.state.text !== "" ? this.state.text : "howdy do fellow friends"}</div>
-    )
-  }
+const App = () => {
+  return(
+    <React.Fragment>
+      <GlobalStyle />
+      <Chart />
+    </React.Fragment>
+  )
 }
 
 ReactDOM.render( <App /> , document.getElementById('earnings-graph'))

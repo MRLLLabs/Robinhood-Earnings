@@ -24,7 +24,6 @@ describe('Chart component', () => {
       symbol: "AAA",
     }
     const component = mount(<Chart graph={props} />)
-
     expect(component.props().graph.company).to.equal('asdf')
     expect(component.props().graph.symbol).to.equal('AAA')
   })
