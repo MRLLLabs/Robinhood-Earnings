@@ -47,33 +47,35 @@ const data = [
 ]
 describe('d3 create method', () => {
   it('should render properly', () => {
-    const component = renderer.create(<D3Create data={[data[0]]} />)
+    let component = renderer.create(<D3Create data={[data[0]]} />)
     expect(component).toMatchSnapshot();
   })
 
   it('should take in data as a prop', () => {
-    const component = mount(<D3Create data={data} />)
+		let component = mount(<D3Create data={data} />)
     expect(component.props().data).toBeDefined();
     expect(component.props().data.length).toBeGreaterThan(1);
   })
 
-  it('should render a chart with correct data', () => {
-    // TODO not entirely sure what this will look like since the D3 isn't built yet.
+  xit('should render a chart with correct data', () => {
+		let component = mount(<D3Create data={data} />)
   })
 
-  it('should be green if trending up', () => {
+  xit('should be green if trending up', () => {
 
   })
 
-  it('should be red if trending down', () => {
+  xit('should be red if trending down', () => {
 
   })
 
   it('should have only past 2 years of quarterly data', () => {
-
+		let component = mount(<D3Create data={data} />)
+		expect(component.props().data[0].date).toBe('Q1 2018')
+		expect(component.props().data[7].date).toBe('Q4 2019')
   })
 
-  it('should have two keys of "Estimated" and "Actual"', () => {
-
+  xit('should have two keys of "Estimated" and "Actual"', () => {
+		let component = mount(<D3Create data={data} />)
   })
 })
