@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
-import { Header, D3Create } from './index.js';
+import { Header, D3Create, Legend } from './index.js';
 
 class Chart extends React.Component {
   constructor() {
@@ -31,6 +31,7 @@ class Chart extends React.Component {
       <React.Fragment>
         <Header />
         <D3Create data={this.state.data} />
+        <Legend />
       </React.Fragment>
     )
   }
