@@ -6,25 +6,31 @@ import { Header, D3Create } from './index.js';
 class Chart extends React.Component {
   constructor() {
     super()
+    this.state = {
+      data: []
+    }
   }
 
   componentDidMount() {
-    fetch('/getData', {
+    fetch('/getData?id=1', {
       type: "GET",
     }).then((response) => {
       return response.json()
     }).then((response) => {
-      console.log(response)
+      console.log("got data")
       this.setState({
-        text: JSON.stringify(response)
+        data: response.data
       })
+    })
+    .catch((err) => {
+      console.log('error with response')
     })
   }
   render(){
     return(
       <React.Fragment>
         <Header />
-        <D3Create />
+        <D3Create data={this.state.data} />
       </React.Fragment>
     )
   }
