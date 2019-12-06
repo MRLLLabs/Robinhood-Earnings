@@ -7,7 +7,8 @@
     "start": "nodemon ./server/app.js",
     "start:debug": "nodemon --inspect ./server/app.js",
     "db:setup": "node -e 'require(\"./server/db/seed.js\")()'",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "test:debug": "node --inspect node_modules/.bin/jest --runInBand"
   },
   "repository": {
     "type": "git",
@@ -42,6 +43,7 @@
     "superagent": "^5.1.2",
     "supertest": "^4.0.2",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "whatwg-fetch": "^3.0.0"
   }
 }

@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chart component should render properly 1`] = `
+Array [
+  <div
+    className="sc-bwzfXH kMAjxQ"
+  >
+    Earnings
+  </div>,
+  <div
+    className="sc-bdVaJa ceTkBM"
+  >
+    <div
+      id="earnings"
+    />
+  </div>,
+  <div
+    className="sc-htpNat biaurz"
+  >
+    <div
+      className="sc-bxivhb ewFUID"
+    >
+      <svg
+        className="sc-bZQynM jVVknj"
+        height="28"
+        width="28"
+      >
+        <g
+          transform="translate(14,20)"
+        >
+          <circle
+            className="sc-gzVnrw dnLsRy"
+            opacity="0.2"
+            r="7"
+          />
+        </g>
+      </svg>
+      <div
+        className="sc-EHOje iVuqz"
+      >
+        <div
+          className="sc-htoDjs jOVgBU"
+        >
+          Estimated
+        </div>
+        <div>
+          —
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-ifAKCX WOpjk"
+    >
+      <svg
+        className="sc-bZQynM jVVknj"
+        height="28"
+        width="28"
+      >
+        <g
+          transform="translate(14,20)"
+        >
+          <circle
+            className="sc-gzVnrw dnLsRy"
+            r="7"
+          />
+        </g>
+      </svg>
+      <div
+        className="sc-EHOje iVuqz"
+      >
+        <div
+          className="sc-htoDjs jOVgBU"
+        >
+          Actual
+        </div>
+        <div>
+          Expected Jan 30, Pre-Market
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;

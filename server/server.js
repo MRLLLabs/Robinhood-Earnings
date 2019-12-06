@@ -19,7 +19,8 @@ app.get('/getData', (req, res) => {
       res.end("data not found")
     } else {
       res.writeHead(200)
-      res.end(JSON.stringify(data[symbol]))
+      //  right now hard coded to take in the first chart
+      res.end(JSON.stringify(data[0]))
     }
   })
 })

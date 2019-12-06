@@ -16,15 +16,17 @@ class Chart extends React.Component {
       type: "GET",
     }).then((response) => {
       return response.json()
-    }).then((response) => {
+    }).then((data) => {
       console.log("got data")
+      debugger
       this.setState({
-        data: response.data
+        data: data.data
       })
     })
     .catch((err) => {
       console.log('error with response')
     })
+
   }
   render(){
     return(
