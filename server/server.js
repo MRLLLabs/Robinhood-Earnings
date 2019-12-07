@@ -9,15 +9,18 @@ app.use('/', express.static(path.resolve(__dirname, '../public')))
 
 
 app.get('/getData', (req, res) => {
+  let symbol = req.url.split('=')[1]
   Graph.find({}, (err, data) => {
     if (err) {
       throw err
     }
-    res.writeHead(200)
     if (data.length === 0) {
+      res.writeHead(404)
       res.end("data not found")
     } else {
-      res.end(JSON.stringify(data))
+      res.writeHead(200)
+      //  right now hard coded to take in the first chart
+      res.end(JSON.stringify(data[0]))
     }
   })
 })
