@@ -18,7 +18,6 @@ class Chart extends React.Component {
       return response.json()
     }).then((data) => {
       console.log("got data")
-      debugger
       this.setState({
         data: data.data
       })

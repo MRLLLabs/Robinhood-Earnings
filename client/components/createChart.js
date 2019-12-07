@@ -66,8 +66,41 @@ const chart = (data) => {
       .attr("opacity", d => {
         return (d.type === "estimated" ? "20%" : "")
       })
-      .call(g => g.append("circle")
+      .call((g) => g.append("circle")
+          .attr('class', "")
           .attr("fill", "#f45531")
           .attr("r", 7))
+  svg.selectAll('circle')
+    .on("mouseover", handleMouseOver)
+    .on("mouseout", handleMouseOut)
+  function handleMouseOver(d, i) {
+    d3.select(this).transition()
+      .duration('100')
+      .attr('r', '25');
+    let len = data.length
+    let otherNode;
+    if (i < 8) {
+      otherNode = i + 8
+    } else {
+      otherNode = i - 8
+    }
+    let diff = d.y - data[otherNode].y;
+    // d3.select(this).append("text")
+      // .attr({x: () => x(d.x)})
+      // .attr({y: () => y(d.y)})
+      // .text("asdf")
+    svg.append("text")
+      .attr('transform', `translate(${x(d.x)},${y(d.y) - 25})`)
+      .attr('class', `ID${i}`)
+      .attr('fill', 'white')
+      .text(`${diff.toFixed(2)}`)
+  }
+  function handleMouseOut(d, i) {
+    d3.select(this).transition()
+      .duration('100')
+      .attr('r', '7')
+    d3.select(`.ID${i}`).remove()
+
+  }
 }
 export default chart
