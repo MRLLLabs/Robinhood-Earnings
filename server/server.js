@@ -11,7 +11,8 @@ app.use('/', express.static(path.resolve(__dirname, '../public')))
 
 
 app.get('/earnings/getData', (req, res) => {
-  Graph.find({id: req.query.id}, (err, data) => {
+  let id = !!req.query.id ? req.query.id : 1
+  Graph.find({id: id}, (err, data) => {
     if (err) {
       throw err
     }
