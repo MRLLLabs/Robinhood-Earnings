@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "webpack -w -d",
+    "build": "webpack",
+    "build:watch": "webpack -w -d",
     "start": "nodemon ./server/app.js",
     "start:debug": "nodemon --inspect ./server/app.js",
     "db:setup": "node -e 'require(\"./server/db/seed.js\")()'",

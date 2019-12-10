@@ -45,7 +45,7 @@ const chart = (data) => {
       .call(g => g.selectAll(".tick line")
           .remove())
 
-  const svg = d3.select('#earnings').append('svg')
+  const svg = d3.select('#earnings-graph').append('svg')
     .attr("width", width)
     .attr("height", height)
     .attr("overflow", "visible")

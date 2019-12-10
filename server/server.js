@@ -8,9 +8,8 @@ app.use(express.urlencoded());
 app.use('/', express.static(path.resolve(__dirname, '../public')))
 
 
-app.get('/getData', (req, res) => {
-  let symbol = req.url.split('=')[1]
-  Graph.find({}, (err, data) => {
+app.get('/earnings/getData', (req, res) => {
+  Graph.find({id: req.query.id}, (err, data) => {
     if (err) {
       throw err
     }

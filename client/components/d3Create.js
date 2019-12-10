@@ -33,7 +33,7 @@ const D3Create = (props) => {
   chart(formatted)
   return (
     <ChartArea>
-      <div id="earnings" />
+      <div id="earnings-graph" />
     </ChartArea>
   )
 }

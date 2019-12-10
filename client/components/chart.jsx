@@ -12,7 +12,7 @@ class Chart extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/getData?id=1', {
+    fetch(`/earnings/getData${window.location.search}`, {
       type: "GET",
     }).then((response) => {
       return response.json()
