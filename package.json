@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/HRSF124-JANK/Robinhood-Earnings#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "d3": "^5.14.2",
     "express": "^4.17.1",
     "mongodb": "^3.3.5",

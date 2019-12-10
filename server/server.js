@@ -1,9 +1,11 @@
 const express = require('express')
 const path = require('path')
 const Graph = require('./db/graph.js')
+const cors = require('cors')
 const app = express()
 
 app.use(express.json());
+app.use(cors())
 app.use(express.urlencoded());
 app.use('/', express.static(path.resolve(__dirname, '../public')))
 
