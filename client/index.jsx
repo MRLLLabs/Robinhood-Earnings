@@ -13,4 +13,4 @@ const App = () => {
   )
 }
 
-ReactDOM.render( <App /> , document.getElementById('earnings'))
+ReactDOM.render( <App /> , document.getElementById('Earnings'))
