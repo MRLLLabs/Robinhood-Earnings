@@ -5,7 +5,7 @@
   "scripts": {
     "build": "webpack",
     "build:watch": "webpack -w -d",
-    "start": "nodemon ./server/app.js",
+    "start": "node ./server/app.js",
     "start:debug": "nodemon --inspect ./server/app.js",
     "db:setup": "node -e 'require(\"./server/db/seed.js\")()'",
     "test": "jest --coverage",

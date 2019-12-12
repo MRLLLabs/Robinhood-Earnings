@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  database:
+    image: mongo:3.3.5
+  mongodb-seed:
+    build: .
+    command: npm run db:setup
+  container:
+    build: .
+    depends_on:
+      - 'database'
+    ports:
+      - '3006:3006'
