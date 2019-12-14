@@ -12,6 +12,14 @@ class Chart extends React.Component {
   }
 
   componentDidMount() {
+    const d = new Date();
+    const totalMinutes = (d.getHours() * 60) + d.getMinutes();
+    let background = '';
+    if (totalMinutes < 360 || totalMinutes >= 900) {
+      document.body.style.background = '#1b1b1d';
+    } else {
+      document.body.style.background = 'white';
+    }
     fetch(`/earnings/getData${window.location.search}`, {
       type: "GET",
     }).then((response) => {
