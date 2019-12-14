@@ -12,7 +12,7 @@ app.use('/', express.static(path.resolve(__dirname, '../public')))
 
 app.get('/earnings/getData', async (req, res) => {
   let id = !!req.query.id ? req.query.id : 1
-  Graph.find({id: id}, (err, data) => {
+  Graph.find({graph_id: id}, (err, data) => {
     if (err) {
       throw err
     }

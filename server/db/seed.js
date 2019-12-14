@@ -15,7 +15,7 @@ const createObjects = () => {
       let newGraph = {
         company: entry[0],
         symbol: entry[1],
-        id: idx + 1,
+        graph_id: idx + 1,
         scale: "",
         data: dataCreate(currentStockPrice)
       }

@@ -3,7 +3,7 @@ const db = require('./index.js');
 mongoose.Promise = global.Promise;
 
 const graphSchema = new mongoose.Schema({
-  id: Number,
+  graph_id: Number,
   company: String,
   symbol: String,
   data: [
