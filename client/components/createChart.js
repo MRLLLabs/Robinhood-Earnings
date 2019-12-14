@@ -68,7 +68,7 @@ const chart = (data) => {
       })
       .call((g) => g.append("circle")
           .attr('class', "")
-          .attr("fill", "#f45531")
+          .attr("fill", '#21ce99')
           .attr("r", 7))
   svg.selectAll('circle')
     .on("mouseover", handleMouseOver)
@@ -92,7 +92,7 @@ const chart = (data) => {
     svg.append("text")
       .attr('transform', `translate(${x(d.x)},${y(d.y) - 25})`)
       .attr('class', `ID${i}`)
-      .attr('fill', 'white')
+      .attr('fill', '#21ce99')
       .text(`${diff.toFixed(2)}`)
   }
   function handleMouseOut(d, i) {
