@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode=production",
     "build:watch": "webpack -w -d",
     "start": "NODE_ENV=production node ./server/app.js",
     "start:debug": "nodemon --inspect ./server/app.js",
