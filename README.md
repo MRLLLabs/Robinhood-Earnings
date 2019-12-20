@@ -24,7 +24,7 @@ earning = {
 
 # Returns last 8 quarterly earnings
 GET to /earnings/:ticker
-
+```
 [
     earning = {
     quarter: '2019Q3',
@@ -74,11 +74,8 @@ GET to /earnings/:ticker
     actual: 37.3,
     estimates: [33, 39.5, 29.3, 32, 40]
     },
-
-
-
 ]
-
+```
 # Updates a quarterly earning
 PUT to /earning/:ticker&:quarter
 
